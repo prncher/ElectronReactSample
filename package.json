@@ -1,0 +1,88 @@
+{
+  "name": "electronreactsample",
+  "version": "1.0.0",
+  "description": "BoilerPlate for Electron React Sample App.",
+  "main": "./build/runtime-main.js",
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1"
+  },
+  "scripts": {
+    "start": "electron ./build/runtime-main.js",
+    "dev": "rimraf build && cross-env NODE_ENV=development webpack --watch --progress --colors",
+    "prod": "rimraf build && cross-env NODE_ENV=production webpack --progress --colors",
+    "build:win": "electron-builder build --win --x64",
+    "build:mac": "electron-builder build --mac --x64"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "copy-pkg-json-webpack-plugin": "0.0.38",
+    "cross-env": "^7.0.2",
+    "electron": "^8.2.0",
+    "electron-builder": "^22.4.1",
+    "html-webpack-plugin": "^4.0.3",
+    "lodash": "^4.17.15",
+    "rimraf": "^3.0.2",
+    "ts-loader": "^6.2.2",
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  },
+  "build": {
+    "appId": "com.electron-react-sample",
+    "productName": "electron-react-sample",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*",
+      "src/assets/**/*",
+      "public/*",
+      "./electron.js"
+    ],
+    "directories": {
+      "app": "./build/",
+      "output": "./out/"
+    },
+    "mac": {
+      "target": "pkg"
+    },
+    "win": {
+      "target": "nsis",
+      "asar": false
+    },
+    "buildVersion": "1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prncher/ElectronReactSample.git"
+  },
+  "keywords": [
+    "Electron",
+    "React",
+    "Typescript",
+    "Webpack"
+  ],
+  "author": "Prince Cheruvathur",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/prncher/ElectronReactSample/issues"
+  },
+  "homepage": "https://github.com/prncher/ElectronReactSample#readme"
+}
