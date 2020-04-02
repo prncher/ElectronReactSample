@@ -1,2 +1,2 @@
 # ElectronReactSample
-BoilterPlate code for Electron React App.
+BoilerPlate code for Electron React App.
